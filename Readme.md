@@ -1,4 +1,11 @@
-# iosheaders
+# iOSHeaders
+
+List all the iOS Headers from `5.1` to `12.1.2`
+
+This project is using:
+- VueJS
+- Typescript
+- NodeJS
 
 ## Project setup
 ```
@@ -15,12 +22,6 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
+___
 
-### Lints and fixes files
-```
-yarn run lint
-```
+_Project run by [BLVCKLNGS](https://twitter.com/BLVCKLNGS) for [Twickd](https://twickd.com/)_ 
