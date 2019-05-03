@@ -1,6 +1,26 @@
-# iOS Header
-This is just a dump from all the headers of iOS.
-From `5.1` to `12.1.2`
+# iosheaders
 
-___
-Class dumped using [class-dump](http://stevenygard.com/projects/class-dump/)
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
