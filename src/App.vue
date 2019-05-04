@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-	<div id="nav">
+	<div id="nav" class="container-fluid`">
 	  <router-link to="/">Home</router-link> |
 	  <router-link to="/about">About</router-link>
+	  <Versions/>
 	</div>
 	<router-view/>
   </div>
@@ -32,14 +33,18 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Action } from "vuex-class";
+import Versions from '@/components/Versions.vue';
 
-@Component
-	export default class App extends Vue {
-		@Action('initStore') initStore:any
-		mounted() {
-			this.initStore()
-		}
+@Component({
+	components: { Versions }
+})
+export default class App extends Vue {
+	@Action('initStore') initStore:any
+
+	mounted() {
+		this.initStore()
 	}
+}
 
 
 </script>

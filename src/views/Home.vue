@@ -1,35 +1,33 @@
 <template>
-  <div id="home">
-    <h1>iOS Headers</h1>
-    <input v-model='selectedHeader'>
-    <p>Headers => {{selectedHeader}}</p>
-    <button @click="versions()">Fetch all</button>
-  </div>
+	<div id="home">
+		<h1>iOS Headers</h1>
+		<input v-model='selectedHeader'>
+		<button @click='fetchForVersion'>Fetch</button>
+	</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import axios, { AxiosResponse, AxiosInstance } from 'axios'
+import { Getter } from 'vuex-class'
 
 
 const ax:AxiosInstance = axios.create({
-  baseURL: process.env.VUE_APP_API_URL || 'http://localhost/'
+	baseURL: process.env.VUE_APP_API_URL || 'http://localhost/'
 })
 
-@Component({ })
-
+@Component
 export default class Home extends Vue {
-  selectedHeader: string = ''
+	selectedHeader:string = ''
 
-  mounted() {
-    console.log(process.env.VUE_APP_API_URL)
-  }
+	@Getter('headersForVersion') headersForVersion:any
+	@Getter('availableVersions') availableVersions:any
 
-  async versions() {
-    const res:AxiosResponse = await axios.get(`${process.env.VUE_APP_API_URL}headers/headers.json`)
-    console.log(res.data);
-  }
+	fetchForVersion() {
+		let data = this.headersForVersion(this.selectedHeader)
+		console.log(data);
+	}
 }
 </script>
 
